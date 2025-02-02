@@ -1,20 +1,21 @@
 export default function decorate(block) {
   console.log("webinarPortal", block);
 
-  // parent div'i alıyoruz
-  const parentDiv = block.querySelector(".webinarportal.block");
+  const webinarPortal = document.querySelector(".webinarportal");
 
-  // child div'leri alıyoruz
-  const childDivs = parentDiv ? [...parentDiv.children] : [];
+  const title = webinarPortal.querySelector("div > div > p");
+  title.className = "webinar-title";
+  const description = webinarPortal.querySelector("div:nth-child(2) > div > p");
+  description.className = "webinar-description";
 
-  // featuresData objesini oluşturuyoruz
-  const featuresData = {
-    title: childDivs[0]?.textContent.trim() || "", // 1. child div: title
-    text: childDivs[1]?.textContent.trim() || "", // 2. child div: text
-  };
+  const webinarDivider = document.createElement("span");
+  webinarDivider.className = "webinarDivider";
 
-  // Objeyi konsola yazdırıyoruz
-  console.log(featuresData);
+  const webinarContainer = document.createElement("div");
+  webinarContainer.className = "webinarContainer";
 
-  return featuresData; // featuresData objesini döndürüyoruz
+  webinarContainer.append(title, description, webinarDivider);
+
+  block.innerHTML = "";
+  block.appendChild(webinarContainer);
 }

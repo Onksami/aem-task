@@ -140,6 +140,14 @@
     margin-top: 1rem;
 }
 
+.SpeakerTitle {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0a2342;
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
     .speakers-main-container {

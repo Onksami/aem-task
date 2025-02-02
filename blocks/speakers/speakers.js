@@ -3,6 +3,11 @@ export default function decorate(block) {
   const mainContainer = document.createElement("div");
   mainContainer.className = "speakers-main-container";
 
+  const speakerTitle = document.createElement("p");
+  speakerTitle.className = "SpeakerTitle";
+  speakerTitle.textContent = "Speakers";
+  mainContainer.appendChild(speakerTitle);
+
   // Create navigation container
   const navContainer = document.createElement("div");
   navContainer.className = "date-navigation";
