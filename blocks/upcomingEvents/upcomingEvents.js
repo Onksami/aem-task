@@ -3,7 +3,7 @@ import { createOptimizedPicture } from "../../scripts/aem.js";
 export default function decorate(block) {
   // Create wrapper for slider
   const sliderWrapper = document.createElement("div");
-  sliderWrapper.className = "upcomingEvents-wrapper";
+  sliderWrapper.className = "upcomingEvents-outer-container";
 
   // Create slider container
   const sliderContainer = document.createElement("div");

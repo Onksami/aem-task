@@ -1,4 +1,8 @@
-.upcomingEvents-wrapper {
+.upcomingevents-wrapper {
+    padding: 20px 100px;
+}
+
+.upcomingEvents-outer-container {
     position: relative;
     width: 100%;
     padding: 0 40px;

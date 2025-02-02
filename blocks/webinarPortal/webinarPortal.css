@@ -1,56 +1,35 @@
-.webinarportal {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex; /* Added to enable flexbox */
-    flex-direction: column; /* Ensure items stack vertically */
-    align-items: center; /* Center items horizontally */
-}
-
-.webinar p {
-    position: absolute; /* Pozisyonlama için absolute kullanıldı */
-    top: 1855px; /* Yukarıdan 1855px */
-    left: 485px; /* Soldan 485px */
-    width: 951px; /* Genişlik 951px */
-    height: 45px; /* Yükseklik 45px */
-
-    /* UI Properties */
-    text-align: center; /* Metin ortalanacak */
-    font: normal normal bold 40px/43px "FS Albert"; /* Yazı tipi ve boyutu */
-    letter-spacing: 0px; /* Harf aralığı */
-    color: #232b76; /* Yazı rengi */
-    opacity: 1; /* Opaklık */
-}
-
-.webinarportal h2 {
-    font-family: sans-serif;
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-    text-align: center; /* Center text for headings */
-}
-
-.webinarportal .block {
+.webinarContainer {
+    background-color: #f7f8fb;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center items in the block */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 80px;
+    gap: 10px;
 }
 
-.webinarportal .block div {
-    margin-bottom: 10px;
-    text-align: center; /* Center text within divs */
+.webinar-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1a237e; /* Dark blue color */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
 }
 
-.webinarportal .block div p {
-    margin-bottom: 0;
+.webinar-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #3f51b5; /* Medium blue color */
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
 }
 
-.webinarportal .block div p:last-child {
-    margin-bottom: 10px;
-}
-
-.webinarportal .block div:last-child {
-    margin-bottom: 0;
+.webinarDivider {
+    width: 50%;
+    transform: matrix(-1, 0, 0, -1, 0, 0);
+    /* UI Properties */
+    border: 3px solid #042164;
 }
