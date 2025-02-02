@@ -1,0 +1,153 @@
+.upcomingEvents-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 0 40px;
+    margin: 20px 0;
+}
+
+.upcomingEvents-container {
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.upcomingEvents-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.upcomingEvents-card {
+    flex: 0 0 280px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.upcomingEvents-date {
+    color: white;
+    background: #1e3771;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.upcomingEvents-description {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #333;
+    flex-grow: 1;
+    padding-inline: 10px;
+}
+
+.upcomingEvents-speaker {
+    color: #0099ff;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding-inline: 10px;
+}
+
+.upcomingEvents-buttons {
+    margin-top: auto;
+    padding-inline: 10px;
+}
+
+.upcomingEvents-buttons.two-buttons {
+    display: flex;
+    gap: 8px;
+    border-radius: 30px;
+}
+
+.upcomingEvents-buttons.single-button {
+    display: flex;
+    justify-content: center;
+    border-radius: 30px;
+}
+
+.upcomingEvents-register,
+.upcomingEvents-calendar {
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.upcomingEvents-register {
+    background-color: transparent;
+    color: #0099ff;
+    border: 2px solid #0099ff;
+}
+
+.upcomingEvents-calendar {
+    background-color: transparent;
+    color: #1e3771;
+    border: 2px solid #1e3771;
+}
+
+.upcomingEvents-details {
+    width: 100%;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: transparent;
+    color: #1e3771;
+    border: 2px solid #1e3771;
+    transition: all 0.2s;
+}
+
+.upcomingEvents-register:hover,
+.upcomingEvents-calendar:hover,
+.upcomingEvents-details:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.upcomingEvents-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #1e3771;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.upcomingEvents-prev {
+    left: 0;
+}
+
+.upcomingEvents-next {
+    right: 0;
+}
+
+.upcomingEvents-nav:hover {
+    background-color: #0099ff;
+}
+
+.upcomingEvents-nav:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .upcomingEvents-wrapper {
+        padding: 0 30px;
+    }
+
+    .upcomingEvents-card {
+        flex: 0 0 260px;
+    }
+
+    .upcomingEvents-buttons.two-buttons {
+        flex-direction: column;
+    }
+}

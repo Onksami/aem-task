@@ -1,0 +1,32 @@
+.prject-features-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 40px;
+}
+
+.prject-feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 300px;
+}
+
+.prject-feature-img-container {
+    margin-bottom: 10px;
+}
+
+.prject-feature-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+}
+
+.prject-feature-description {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
