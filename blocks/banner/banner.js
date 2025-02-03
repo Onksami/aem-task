@@ -29,21 +29,19 @@ function timeUntil(targetDate) {
     seconds,
   };
 }
+
 function createTimeBox(value, label) {
   const box = document.createElement('div');
   box.className = 'timeBox';
 
-  // Create and style value paragraph
   const valueP = document.createElement('p');
   valueP.className = 'timeValue';
   valueP.textContent = value;
 
-  // Create and style label paragraph
   const labelP = document.createElement('p');
   labelP.className = 'timeLabel';
   labelP.textContent = label;
 
-  // Append paragraphs to box
   box.appendChild(valueP);
   box.appendChild(labelP);
 
@@ -60,12 +58,7 @@ export default function decorate(block) {
 
   bannerContainer.setAttribute('data-bg-image', imgUrl);
 
-  //  const bannerBg = bannerContent.children[0];
-  //  bannerBg.className = "bannerBg";
-  //  console.log("bannerBg", bannerBg);
-
   const bannerTitle = block.children[0].children[1].children[0];
-
   bannerTitle.className = 'bannerTitle';
   const bannerDesc = block.children[0].children[1].children[1];
   bannerDesc.className = 'bannerDesc';
@@ -82,18 +75,33 @@ export default function decorate(block) {
     year: 'numeric',
   };
   const formattedDate = date.toLocaleDateString('en-GB', options);
-
   bannerDate.innerText = formattedDate;
-
-  const remainingTime = timeUntil(bannerDate.innerText);
 
   const remainingTimeContainer = document.createElement('div');
   remainingTimeContainer.className = 'remainingTimeContainer';
 
-  Object.entries(remainingTime).forEach(([key, value]) => {
-    const timeBox = createTimeBox(value, key);
-    remainingTimeContainer.appendChild(timeBox);
-  });
+  function updateCountdown() {
+    const remainingTime = timeUntil(bannerDate.innerText);
+    remainingTimeContainer.innerHTML = ''; // Eski değerleri temizle
+
+    Object.entries(remainingTime).forEach(([key, value]) => {
+      const timeBox = createTimeBox(value, key);
+      remainingTimeContainer.appendChild(timeBox);
+    });
+
+    if (
+      remainingTime.days === 0
+      && remainingTime.hours === 0
+      && remainingTime.minutes === 0
+      && remainingTime.seconds === 0
+    ) {
+      // eslint-disable-next-line no-use-before-define
+      clearInterval(interval);
+    }
+  }
+
+  updateCountdown(); // İlk başta çalıştır
+  const interval = setInterval(updateCountdown, 1000); // Her saniye güncelle
 
   const bannerFirstSection = document.createElement('div');
   bannerFirstSection.appendChild(bannerTitle);
@@ -104,7 +112,6 @@ export default function decorate(block) {
 
   const bannerLoginButton = block.children[0].children[2].children[0];
   bannerLoginButton.className = 'bannerLoginButton';
-  //  console.log("bannerLoginButton", bannerLoginButton);
 
   const loginButton = document.createElement('button');
   loginButton.innerHTML = bannerLoginButton.innerHTML;
@@ -113,15 +120,12 @@ export default function decorate(block) {
   bannerLoginButton.replaceWith(loginButton);
 
   const bannerRegisterButton = block.children[0].children[2].children[1];
-  // console.log("bannerRegisterButton", bannerRegisterButton);
 
   const registerButton = document.createElement('button');
   registerButton.innerHTML = bannerRegisterButton.innerHTML;
   registerButton.className = 'banner-register-button';
 
   bannerRegisterButton.replaceWith(registerButton);
-
-  //  console.log("registerButton", registerButton);
 
   const bannerSecondSection = document.createElement('div');
   bannerSecondSection.appendChild(loginButton);
