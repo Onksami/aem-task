@@ -1,5 +1,6 @@
-.upcomingevents-wrapper {
+.events-wrapper {
     padding: 20px 100px;
+    max-width: 1200px;
 }
 
 .upcomingEvents-outer-container {
@@ -142,9 +143,10 @@
     cursor: not-allowed;
 }
 
-@media (max-width: 768px) {
-    .upcomingEvents-wrapper {
+@media (max-width: 900px) {
+    .events-wrapper {
         padding: 0 30px;
+        max-width: 600px;
     }
 
     .upcomingEvents-card {
